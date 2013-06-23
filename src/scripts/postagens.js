@@ -14,7 +14,6 @@ function insereMensagem(){
 			
 		parametrosGET = "textoPost="+texto+"&fotoPost=\"\"&videoPost=\"\"&visibilidadePost="+visibilidade
 		
-		alert(parametrosGET);
 		xmlhttp=new XMLHttpRequest();
 
 		
