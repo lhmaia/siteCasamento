@@ -17,43 +17,43 @@
 		
 		$foto = $_FILES['foto'];
 		
+		$nome_imagem = "";
+		
 		if (!empty($foto['name'])){
 			//verifica se arquivo e uma imagem
 			if(!preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $foto["type"])){
-				die("Arquivo não é uma imagem.");
+				die("Arquivo nao e uma imagem.");
 			}
 			
 			//pega a extensao da imagem
 			preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto["name"], $ext);
 			
-			// Gera um nome único para a imagem
+			// Gera um nome unico para a imagem
 			$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
 			
 			$caminho_imagem = dirname(__FILE__)."/../modelo/img/".$nome_imagem;
-			
-			echo $caminho_imagem;
-			echo "<br /> <br />";
-			
+					
 			// Faz o upload da imagem para seu respectivo caminho
 			if (!(move_uploaded_file($foto["tmp_name"], $caminho_imagem))){
-				die("Não foi possível fazer upload da foto");
+				die("Nao foi possivel fazer upload da foto");
 			}
+						
+		}
+		
+		if ($nome_imagem == ""){
+			$nome_imagem = "nophoto.jpg";
+		}
+		
+		//criptografando a senha
+		$senha = md5($_POST['senha']);
 			
-			//criptografando a senha
-			$senha = md5($_POST['senha']);
+		$novoUsuario = new pessoa($_POST['nome'], $_POST['email'], $senha,
+				$_POST['logradouro'], $_POST['bairro'], $_POST['cidade'],
+				$_POST['estado'], $_POST['telefone'], $nome_imagem);
 			
-			$novoUsuario = new pessoa($_POST['nome'], $_POST['email'], $senha, 
-										$_POST['logradouro'], $_POST['bairro'], $_POST['cidade'],
-					 					$_POST['estado'], $_POST['telefone'], $nome_imagem);
-			
-			$resultado = $novoUsuario->gravar();
-			echo "<br /> <br />";
-			echo $resultado;
-			echo "<br /> <br />";
-			if ($resultado){
-				header("Location: " . $enderecoConfirmacao);
-			}
-			
+		$resultado = $novoUsuario->gravar();
+		if ($resultado){
+			header("Location: " . $enderecoConfirmacao);
 		}
 		
 	}

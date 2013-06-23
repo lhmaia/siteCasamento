@@ -12,7 +12,8 @@
     Casamento Luiz e Fernanda
   </title>
   
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/postagens.js"></script>
   
   <script>
 	  $(document).ready(function(){
@@ -69,7 +70,25 @@
 		<img id="img_convite" src="convite/inverteImagem.png" alt="Convite do casamento"></img>
     </div>
     <div id="div_postagens">
-  		<p>asdfasfdasdfas asdf asdf adsf asdf adf asdf adf adsf adsfasdfasdf adsfasdfa</p>
+    	<hr>
+    	<div id="div_frm_postagens">
+	  		<p>Poste sua mensagem</p>
+	  		<form id="frm_postagens">
+	  			<input type="text" name="txtPostagens" id="txtPostagens" />
+	  			<p>
+	  			Quem pode ver esta mensagem:
+	  			<select name="escolheVisPost" id="escolheVisiPost">
+	  				<option value="todos">Todos</option>
+	  				<option value="somentenoivos">Somente os noivs</option> 
+	  			</select>
+	  			<input type="button" name="btnPost" id="btnPost" value="Publicar" onclick="insereMensagem()" />
+	  			</p>
+	  		</form>
+	  		<hr>
+  		</div>
+  		<div id="div_linhaDoTempo">
+  			<?php include dirname(__FILE__).'/controller/exibe_postagens.php'; ?>
+  		</div>
   	</div>
   </div>
 
