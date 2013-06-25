@@ -86,6 +86,7 @@ CREATE TABLE postagens (
 	foto varchar (255),
 	video varchar (255),
 	visibilidade int,
+	horario datetime,
 	
 	PRIMARY KEY (id),
 	CONSTRAINT postagem_pessoa FOREIGN KEY (id_pessoa) references Pessoa(id)
