@@ -125,7 +125,7 @@ class pessoa{
   public function gravar(){
     require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
     $conexao = connectionFactory::getInstance();
-    
+      
     //verifica se email ja existe
     $strConsulta = sprintf("select * from pessoa where email = %s", $conexao->GetSQLValueString($this->email,"text"));
     
@@ -137,7 +137,7 @@ class pessoa{
         return false;
       }
     }
-    
+       
     $strConsulta = sprintf("INSERT INTO pessoa (nome, email, senha, logradouro, bairro, cidade,
                       estado, telefone, foto, aprovado)
       VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
@@ -150,11 +150,11 @@ class pessoa{
         $conexao->GetSQLValueString($this->estado, "text"),
         $conexao->GetSQLValueString($this->telefone, "text"),
         $conexao->GetSQLValueString($this->foto, "text"),
-    	$conexao->GetSQLValueString($this->foto, "n")
+    	$conexao->GetSQLValueString("n", "text")
         );
-    
+       
     $consulta = mysqli_query($conexao->getConnection(), $strConsulta);
-      
+     
     if ($consulta){
       return true;
     }

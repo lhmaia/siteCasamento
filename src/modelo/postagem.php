@@ -8,6 +8,7 @@ class postagem{
 	private $foto = '';
 	private $video = '';
 	private $visibilidade = 0;
+	private $horario = '';
 	
 	public function __construct($donoPost, $texto, $foto, $video, $visibilidade){
 		$this->donoPost = $donoPost;
@@ -61,12 +62,20 @@ class postagem{
 		$this->visibilidade = $visibilidade;
 	}
 	
+	public function getHorario(){
+		return $this->horario;
+	}
+	
+	public function setHorario($horario){
+		$this->horario = $horario;
+	}
+	
 	public function gravar(){
 		require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
 		$conexao = connectionFactory::getInstance();
 	
-		$strConsulta = sprintf("INSERT INTO postagens (id_pessoa, texto, foto, video, visibilidade)
-      VALUES(%s,%s,%s,%s,%s)",
+		$strConsulta = sprintf("INSERT INTO postagens (id_pessoa, texto, foto, video, visibilidade, horario)
+      VALUES(%s,%s,%s,%s,%s, DATE_SUB(NOW(), INTERVAL 3 HOUR))",
 				$conexao->GetSQLValueString($this->donoPost, "text"),
 				$conexao->GetSQLValueString($this->texto, "text"),
 				$conexao->GetSQLValueString($this->foto, "text"),
@@ -88,7 +97,7 @@ class postagem{
 	public static function listaPostagens(){
 		require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
 		$conexao = connectionFactory::getInstance();
-		$strConsulta = sprintf("select * from postagens");
+		$strConsulta = sprintf("select * from postagens order by id desc");
 		$consulta = mysqli_query($conexao->getConnection(), $strConsulta);
 		if($consulta){
 			return $consulta;

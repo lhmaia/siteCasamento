@@ -26,6 +26,17 @@ function insereMensagem(){
 		
 		exibeLinhaDoTempo();
 		
+		xmlUpdate = new XMLHttpRequest();
+		
+		xmlUpdate.onreadystatechange=function(){
+		    document.getElementById("div_linhaDoTempo").innerHTML=xmlUpdate.responseText;
+		}
+		
+		xmlUpdate.open("GET","controller/exibe_postagens.php", true);
+		xmlUpdate.send();
+		
+		document.getElementById("txtPostagens").value = "";
+		
 	}
 }
 

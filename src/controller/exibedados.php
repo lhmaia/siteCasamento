@@ -27,7 +27,7 @@ Casamento Luiz e Fernanda
 		<label>Email: </label> <?php echo $_SESSION['usuarioSessao']->getEmail(); ?> 
 	</div>
 	<div id="logradouro">
-		<label>Endereço: </label> <?php echo $_SESSION['usuarioSessao']->getLogradouro(); ?> 
+		<label>Endereco: </label> <?php echo $_SESSION['usuarioSessao']->getLogradouro(); ?> 
 	</div>
 	<div id="bairro">
 		<label>Bairro: </label> <?php echo $_SESSION['usuarioSessao']->getBairro(); ?> 

@@ -21,6 +21,7 @@
 			
 			echo "<div id=\"divCorpoPost\">";
 			echo "<p id=\"NomeDonoPost\">". $usuPost->getNome() ."</p>";
+			echo "<p id=\"DataDoPost\">"." às ".date("H:i", strtotime($row['horario']))." de ".date("d/m/Y", strtotime($row['horario']))."</p>";
 			echo "<p id=\"TextoDoPost\">". $row['texto']."</p>";
 			echo "</div>";
 			
