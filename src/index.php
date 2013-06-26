@@ -14,7 +14,7 @@
   
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="scripts/postagens.js"></script>
-  <script type="text/javascript" src="scripts/util.js"></script>
+  <!-- script type="text/javascript" src="scripts/util.js"></script -->
   
   <script>
 	  $(document).ready(function(){
@@ -92,7 +92,7 @@
     	<hr>
     	<div id="div_frm_postagens">
 	  		<form id="frm_postagens">
-	  			<input type="text" value="" title="Poste sua mensagem" name="txtPostagens" id="txtPostagens" />
+	  			<input type="text" value="" title="Poste sua mensagem" name="txtPostagens" id="txtPostagens" onkeydown="if (event.keyCode == 13) document.getElementById('btnPost').click()" />
 	  			<p>
 	  			Quem pode ver esta mensagem:
 	  			<select name="escolheVisPost" id="escolheVisiPost">

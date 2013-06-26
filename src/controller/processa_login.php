@@ -5,7 +5,7 @@
   
   //iniciando sessao para restringir o acesso a pagina
   
-  $enderecoFalha = "http://localhost/sitecasamento/controller/login.php";
+  $enderecoFalha = "http://fernandaeluiz.atwebpages.com/controller/login.php";
 
   //$conexao = connectionFactory::getInstance();
   

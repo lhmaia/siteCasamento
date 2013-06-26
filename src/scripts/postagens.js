@@ -1,16 +1,17 @@
 function insereMensagem(){
 	
-	texto = document.getElementById("txtPostagens").value
+	texto = document.getElementById("txtPostagens").value;
+	textoPadrao = document.getElementById("txtPostagens").title;
 	
 	
-	if (texto=="")
+	if (texto=="" || texto==textoPadrao)
 	{
-		alert("Não é possível publicar uma mensagem em branco.")
+		alert("Não é possível publicar uma mensagem em branco.");
 	}
 	else
 	{
 		
-		visibilidade = document.getElementById("escolheVisiPost").value
+		visibilidade = document.getElementById("escolheVisiPost").value;
 			
 		parametrosGET = "textoPost="+texto+"&fotoPost=\"\"&videoPost=\"\"&visibilidadePost="+visibilidade+"&tipo_processamento=inserir";
 		
@@ -54,5 +55,8 @@ function exibeLinhaDoTempo(){
 	xmlUpdate.open("GET","controller/exibe_postagens.php", true);
 	xmlUpdate.send();
 	
-	document.getElementById("txtPostagens").value = ""; 
+	document.getElementById("txtPostagens").value = document.getElementById("txtPostagens").title;
+	document.getElementById("txtPostagens").setAttribute("class", "texto_default_caixa_texto");
+	//document.getElementById("txtPostagens").value = "";
+	//document.getElementById("txtPostagens").blur;
 }
