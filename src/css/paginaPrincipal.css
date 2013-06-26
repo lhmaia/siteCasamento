@@ -3,6 +3,20 @@ body
 	margin:0px;	
 }
 
+.texto_default_caixa_texto
+{
+	/*formatacao do texto*/
+	color:gray;
+	font-style: italic;	
+}
+
+.texto_edicao_caixa_texto
+{
+	/*formatacao do texto*/
+	color:black;
+	font-style: normal;
+}
+
 .cabecalho
 {
 	margin:0px;
@@ -124,6 +138,12 @@ body
 	font-family:Arial,Helvetica,sans-serif;
 	font-size: medium;
 }
+
+#divPost a 
+{
+	color: blue;
+}
+
 
 /*formatacao dos links*/
 a:link 

@@ -4,6 +4,31 @@
   <title>
     Casamento Luiz e Fernanda
   </title>
+  
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   
+  <script>
+	  $(document).ready(function(){
+		  $('input[type="text"],input[type="password"]').each(function(){
+			    this.value = $(this).attr('title');
+			    $(this).addClass('texto_default_caixa_texto');
+			 
+			    $(this).focus(function(){
+			        if(this.value == $(this).attr('title')) {
+			            this.value = '';
+			            $(this).removeClass('texto_default_caixa_texto');
+			        }
+			    });
+			 
+			    $(this).blur(function(){
+			        if(this.value == '') {
+			            this.value = $(this).attr('title');
+			            $(this).addClass('texto_default_caixa_texto');
+			        }
+			    });
+			});		  
+		});
+  </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
   <link rel="stylesheet" type="text/css" href="../css/login.css">
@@ -26,8 +51,8 @@
       	  <tr>
       	  	  <td>
 		      	  <div>
-			      	<label for='username' >Login:</label>
-			      	<input class="inputtext" type='text' name='username' id='username'  maxlength="50" />
+			      	<!-- label for='username' >Login:</label> -->
+			      	<input class="inputtext" value="" title="E-mail" type='text' name='username' id='username'  maxlength="50" />
 			      </div>
 		      </td>
 	      </tr>
@@ -35,8 +60,8 @@
 	      <tr>
       	  	  <td>
 		      	<div>   
-			      <label for='password' >Senha:</label>
-			      <input class="inputtext" type='password' name='password' id='password' maxlength="50" />
+			      <!-- label for='password' >Senha:</label> -->
+			      <input class="inputtext" type='password' value="" title="Senha" name='password' id='password' maxlength="50" />
 			      <input type='submit' name='Submit' value='Entrar' />
 			    </div>
 		      </td>

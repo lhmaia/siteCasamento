@@ -5,41 +5,54 @@ function insereMensagem(){
 	
 	if (texto=="")
 	{
-		alert("Não é possível publicar uma mensagem em branco.")
+		alert("NÃ£o Ã© possÃ­vel publicar uma mensagem em branco.")
 	}
 	else
 	{
 		
 		visibilidade = document.getElementById("escolheVisiPost").value
 			
-		parametrosGET = "textoPost="+texto+"&fotoPost=\"\"&videoPost=\"\"&visibilidadePost="+visibilidade
+		parametrosGET = "textoPost="+texto+"&fotoPost=\"\"&videoPost=\"\"&visibilidadePost="+visibilidade+"&tipo_processamento=inserir";
 		
 		xmlhttp=new XMLHttpRequest();
-
-		
 		xmlhttp.onreadystatechange=function(){
-			
 		}
 		
 		xmlhttp.open("GET","controller/processa_postagem.php?"+parametrosGET,true);
 		xmlhttp.send();
-		
+				
+		//atualizando automaticamente a div contendo a linha do tempo
 		exibeLinhaDoTempo();
-		
-		xmlUpdate = new XMLHttpRequest();
-		
-		xmlUpdate.onreadystatechange=function(){
-		    document.getElementById("div_linhaDoTempo").innerHTML=xmlUpdate.responseText;
-		}
-		
-		xmlUpdate.open("GET","controller/exibe_postagens.php", true);
-		xmlUpdate.send();
-		
-		document.getElementById("txtPostagens").value = "";
 		
 	}
 }
 
+function removeMensagem(idPost){
+	
+	confirmacao = confirm("VocÃª tem certeza de que deseja excluir esta mensagem?");
+	
+	if (!confirmacao) return;
+	
+	parametrosGET = "idPost="+idPost+"&tipo_processamento=remover";
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+	}
+	
+	xmlhttp.open("GET","controller/processa_postagem.php?"+parametrosGET,true);
+	xmlhttp.send();
+	
+	//atualizando automaticamente a div contendo a linha do tempo
+	exibeLinhaDoTempo();
+}
+
 function exibeLinhaDoTempo(){
-	document.getElementById("div_linhaDoTempo").innerHtml = document.getElementById("div_linhaDoTempo").innerHtml; 
+	xmlUpdate = new XMLHttpRequest();	
+	xmlUpdate.onreadystatechange=function(){
+	    document.getElementById("div_linhaDoTempo").innerHTML=xmlUpdate.responseText;
+	}
+	
+	xmlUpdate.open("GET","controller/exibe_postagens.php", true);
+	xmlUpdate.send();
+	
+	document.getElementById("txtPostagens").value = ""; 
 }

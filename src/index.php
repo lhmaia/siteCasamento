@@ -14,6 +14,7 @@
   
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="scripts/postagens.js"></script>
+  <script type="text/javascript" src="scripts/util.js"></script>
   
   <script>
 	  $(document).ready(function(){
@@ -28,6 +29,24 @@
 				$("#div_convite").show("slow");
 			});//.show("slow");
 		  });
+		  $('input[type="text"]').each(function(){
+			    this.value = $(this).attr('title');
+			    $(this).addClass('texto_default_caixa_texto');
+			 
+			    $(this).focus(function(){
+			        if(this.value == $(this).attr('title')) {
+			            this.value = '';
+			            $(this).removeClass('texto_default_caixa_texto');
+			        }
+			    });
+			 
+			    $(this).blur(function(){
+			        if(this.value == '') {
+			            this.value = $(this).attr('title');
+			            $(this).addClass('texto_default_caixa_texto');
+			        }
+			    });
+			});		  
 		});
   </script>
   
@@ -72,9 +91,8 @@
     <div id="div_postagens">
     	<hr>
     	<div id="div_frm_postagens">
-	  		<p>Poste sua mensagem</p>
 	  		<form id="frm_postagens">
-	  			<input type="text" name="txtPostagens" id="txtPostagens" />
+	  			<input type="text" value="" title="Poste sua mensagem" name="txtPostagens" id="txtPostagens" />
 	  			<p>
 	  			Quem pode ver esta mensagem:
 	  			<select name="escolheVisPost" id="escolheVisiPost">

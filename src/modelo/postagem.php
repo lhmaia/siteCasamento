@@ -94,6 +94,19 @@ class postagem{
 	
 	}
 	
+	public static function removePostagem($idPost){
+		require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
+		$conexao = connectionFactory::getInstance();
+		$strConsulta = sprintf("DELETE FROM postagens WHERE id=%s", $conexao->GetSQLValueString($idPost, "text"));
+		$consulta = mysqli_query($conexao->getConnection(), $strConsulta);
+		if($consulta){
+			return $consulta;
+		}
+		else{
+			return false;
+		}
+	}
+	
 	public static function listaPostagens(){
 		require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
 		$conexao = connectionFactory::getInstance();

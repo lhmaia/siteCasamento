@@ -56,3 +56,19 @@ body
 	left:100px;
 	top:80px;	
 }
+
+input[type="text"].texto_default_caixa_texto 
+{
+	width: 90%;
+	font-size: 15px;
+	color:gray;
+	font-style: italic;
+}
+
+input[type="password"].texto_default_caixa_texto 
+{
+	width: 60%;
+	font-size: 15px;
+	color:gray;
+	font-style: italic;
+}
