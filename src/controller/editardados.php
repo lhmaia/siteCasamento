@@ -37,29 +37,20 @@
   }
 ?>
 
-<!DOCTYPE html>
-<html>
 
-<head>
-  <title>
-  Casamento Luiz e Fernanda
-  </title>
+<?php require_once dirname(__FILE__)."/tempCabecalho.php"; ?>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" type="text/css" href="css/header.css">
-</head>
-
-<body>
+<div id="formulario" class="corpo_formulario" >
   <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" accept-charset='UTF-8' name="edicao" >
-  <label for='nome' >Nome:</label> <input type="text" name="nome" id="nome" value=<?php echo "'".$_SESSION['usuarioSessao']->getNome()."'";?>  /> <br /><br />
-  <label for='email' >Email:</label> <input type="text" name="email" id="email" value=<?php echo "'".$_SESSION['usuarioSessao']->getEmail()."'";?>  /> <br /><br />  
-  <label for='logradouro' >Endereço:</label>  <input type="text" name="logradouro" id="logradouro" value=<?php echo "'".$_SESSION['usuarioSessao']->getLogradouro()."'";?> /> <br /><br />
-  <label for='bairro' >Bairro:</label> <input type="text" name="bairro" id="bairro" value=<?php echo "'".$_SESSION['usuarioSessao']->getBairro()."'";?>  /> <br /><br />
-  <label for='cidade' >Cidade:</label> <input type="text" name="cidade" id="cidade" value=<?php echo "'".$_SESSION['usuarioSessao']->getCidade()."'";?>  /> <br /><br />
-  <label for='estado' >Estado:</label> <input type="text" name="estado" id="estado" maxlength="2" value=<?php echo "'".$_SESSION['usuarioSessao']->getEstado()."'";?>  /> <br /><br />
-  <label for='telefone' >Telefone:</label> <input type="text" name="telefone" id="telefone" value=<?php echo "'".$_SESSION['usuarioSessao']->getTelefone()."'";?>  /> <br /><br />  
+  <label for='nome' >Nome:</label><br /> <input type="text" name="nome" id="nome" value=<?php echo "'".$_SESSION['usuarioSessao']->getNome()."'";?>  /><br />
+  <label for='email' >Email:</label><br /> <input type="text" name="email" id="email" value=<?php echo "'".$_SESSION['usuarioSessao']->getEmail()."'";?>  /> <br />
+  <label for='logradouro' >Endereço:</label><br />  <input type="text" name="logradouro" id="logradouro" value=<?php echo "'".$_SESSION['usuarioSessao']->getLogradouro()."'";?> /> <br />
+  <label for='bairro' >Bairro:</label><br /> <input type="text" name="bairro" id="bairro" value=<?php echo "'".$_SESSION['usuarioSessao']->getBairro()."'";?>  /> <br />
+  <label for='cidade' >Cidade:</label><br /> <input type="text" name="cidade" id="cidade" value=<?php echo "'".$_SESSION['usuarioSessao']->getCidade()."'";?>  /> <br />
+  <label for='estado' >Estado:</label><br /> <input type="text" name="estado" id="estado" maxlength="2" value=<?php echo "'".$_SESSION['usuarioSessao']->getEstado()."'";?>  /> <br />
+  <label for='telefone' >Telefone:</label><br /> <input type="text" name="telefone" id="telefone" value=<?php echo "'".$_SESSION['usuarioSessao']->getTelefone()."'";?>  /> <br />  
   <input type="submit" name="Salvar" value="Salvar" />
   <a href="exibedados.php">Cancelar e voltar</a>
-</body>
+</div>
 
-</html>
+<?php require_once dirname(__FILE__)."/tempRodape.php"; ?>

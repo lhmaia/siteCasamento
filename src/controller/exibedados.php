@@ -2,21 +2,13 @@
 	require_once dirname(__FILE__).'/processa_login.php';
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>
-Casamento Luiz e Fernanda
-</title>
+<?php require_once dirname(__FILE__)."/tempCabecalho.php"; ?>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="css/header.css">
-</head>
-
-<body>
+<div id="formulario_exibicao" class="corpo_formulario" >
 	<div>
-		<a href="editardados.php">Editar dados</a>
+		<a href="editardados.php">Editar dados</a> - <a href="../index.php">Pagina inicial</a>
 	</div>
+	
 	<div>
 		<img alt="foto de perfil" height="200" width="150" src=<?php echo "../modelo/img/".$_SESSION["usuarioSessao"]->getFoto(); ?> >
 	</div>
@@ -41,6 +33,7 @@ Casamento Luiz e Fernanda
 	<div id="telefone">
 		<label>Telefone: </label> <?php echo $_SESSION['usuarioSessao']->getTelefone(); ?> 
 	</div>
-	<a href="../index.php">Pagina inicial</a>
-</body>
-</html>
+
+</div>
+
+<?php require_once dirname(__FILE__)."/tempRodape.php"; ?>

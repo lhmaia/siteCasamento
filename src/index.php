@@ -57,13 +57,13 @@
 <body>
   <div id="divCabecalho" class="cabecalho">
     <div id="divLogo">
-    <img alt="Casamento Luiz e Fernanda" src="img/logo_topo.png"></img>
+    <a href="index.php"><img alt="Casamento Luiz e Fernanda" src="img/logo_topo.png"></img></a>
     </div>
     <div id="logout" class="menu_topo_direita">
-      <a href="controller/logout.php">Sair</a>
+    	<a href="controller/logout.php">Sair</a>
     </div>
     <div id="usuario" class="menu_topo_direita">
-      <a href="controller/exibedados.php"><?php echo $_SESSION['usuarioSessao']->getNome(); ?></a>
+      <a href="controller/exibedados.php" title="Clique aqui para ver e editar seus dados."><?php echo $_SESSION['usuarioSessao']->getNome(); ?></a>
     </div>
   </div>
   
@@ -72,11 +72,11 @@
     <?php
     	//testa se e membro do grupo noivos, o grupo 1 
 	   if($_SESSION["usuarioSessao"]->eMembro(1)){
-	    echo "<a href=\"controller\lista_usuarios.php\">Aprovar cadastros</a>"."<br \>";  
+	    echo "<a href=\"controller/lista_usuarios.php\">Aprovar cadastros</a>"."<br \>";  
 	   } 
     ?>
     </div>
-    <div>Como chegar</div>
+    <div><a href="controller/mapa.php">Como chegar</a></div>
     <div>Poste sua foto ou vídeo</div>
     <div>Chá de panela</div>
   </div>

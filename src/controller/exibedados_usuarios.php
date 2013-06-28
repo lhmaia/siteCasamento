@@ -22,20 +22,11 @@
 	}
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>
-Casamento Luiz e Fernanda
-</title>
+<?php require_once dirname(__FILE__)."/tempCabecalho.php"; ?>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" type="text/css" href="css/header.css">
-</head>
-
-<body>
+<div id="formulario_exibicao" class="corpo_formulario" >
 	<div>
-		<a href="editardados.php">Editar dados</a>
+		<a href="../index.php">Ir para a página inicial</a> / <a href="lista_usuarios.php">Voltar para a página de aprovação</a>
 	</div>
 	<div>
 		<img alt="foto de perfil" height="200" width="150" src=<?php echo "../modelo/img/".$usuario->getFoto(); ?> >
@@ -86,7 +77,8 @@ Casamento Luiz e Fernanda
 			/>
 		</form>
 	</div>
-	<a href="../index.php">Pagina inicial</a>
-	<a href="lista_usuarios.php">Voltar</a>
-</body>
-</html>
+	
+
+</div>
+
+<?php require_once dirname(__FILE__)."/tempRodape.php"; ?>

@@ -7,20 +7,10 @@
 
 ?>
 
-<!DOCTYPE html>
-<html>
+<?php require_once dirname(__FILE__)."/tempCabecalho.php"; ?>
 
-<head>
-	<title>
-	Casamento Luiz e Fernanda
-	</title>
-	
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="css/header.css">
-</head>
-
-<body>
-
+<div id="formulario_exibicao" class="corpo_formulario" >
+	<div id="tabelaUsuarios">
 	<table border="1">
 		<tr>
 		<th>Nome</th>
@@ -32,21 +22,24 @@
 			$listausuarios = pessoa::listaUsuarios();
 			while ($row = mysqli_fetch_array($listausuarios, MYSQLI_ASSOC)) {
 				echo "<tr>";
-					echo "<th>";
+					echo "<td>";
 						echo $row['nome'];
-					echo "</th>";
-					echo "<th>";
+					echo "</td>";
+					echo "<td>";
 						echo $row['email'];
-					echo "</th>";
-					echo "<th>";
+					echo "</td>";
+					echo "<td>";
 						echo "<a href=\"exibedados_usuarios.php?aprovar=exibir&id_usuario=" . $row['id'] . "\" >Ver detalhes</a>";
-					echo "</th>";
+					echo "</td>";
 				echo "</tr>";
 			}
 		?>
 	
 	</table>
+	</div>
+	<div id="linkInicial">
+		<a href="../index.php">Pagina inicial</a>
+	</div>
+</div>
 
-	<a href="../index.php">Pagina inicial</a>
-</body>
-</html>
+<?php require_once dirname(__FILE__)."/tempRodape.php"; ?>
