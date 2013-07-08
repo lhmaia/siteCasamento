@@ -19,10 +19,11 @@ class pessoa{
   private $aprovado = false;
   private $quemconvidou = '';
   private $foto = '';
+  private $lembrete_senha = '';
   //private $grupos = null;
   
   public function __construct($nome, $email, $senha, $logradouro, $bairro, $cidade,
-                      $estado, $telefone, $foto){
+                      $estado, $telefone, $foto, $lembrete_senha){
     
     $this->nome = $nome;
     $this->email = $email;
@@ -33,6 +34,7 @@ class pessoa{
     $this->estado = $estado;
     $this->telefone = $telefone;
     $this->foto = $foto;
+	$this->lembrete_senha = $lembrete_senha;
     
   }
     
@@ -122,6 +124,15 @@ class pessoa{
     $this->aprovado = $aprovado;
   }
   
+  public function getLembrete_senha (){
+	return $this->lembrete_senha;
+  }
+  
+  public function setLembrete_senha ($lembrete_senha){
+	$this->lembrete_senha = $lembrete_senha;
+  }
+  
+  
   public function gravar(){
     require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
     $conexao = connectionFactory::getInstance();
@@ -139,8 +150,8 @@ class pessoa{
     }
        
     $strConsulta = sprintf("INSERT INTO pessoa (nome, email, senha, logradouro, bairro, cidade,
-                      estado, telefone, foto, aprovado)
-      VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+                      estado, telefone, foto, aprovado, lembrete_senha)
+      VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s, %s)",
         $conexao->GetSQLValueString($this->nome, "text"),
         $conexao->GetSQLValueString($this->email, "text"),
         $conexao->GetSQLValueString($this->senha, "text"),
@@ -150,7 +161,8 @@ class pessoa{
         $conexao->GetSQLValueString($this->estado, "text"),
         $conexao->GetSQLValueString($this->telefone, "text"),
         $conexao->GetSQLValueString($this->foto, "text"),
-    	$conexao->GetSQLValueString("n", "text")
+    	$conexao->GetSQLValueString("n", "text"),
+		$conexao->GetSQLValueString($this->lembrete_senha, "text")
         );
        
     $consulta = mysqli_query($conexao->getConnection(), $strConsulta);

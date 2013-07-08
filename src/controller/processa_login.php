@@ -12,7 +12,7 @@
     //verificar se o usuario ja preencheu a tela de logon
     if (isset($_POST['username']) && isset($_POST['password'])){
 
-      $usuario = new pessoa("","","","","","","","","");
+      $usuario = new pessoa("","","","","","","","","","");
       
       if (!$usuario->recuperarPorEmail($_POST["username"])){
         header("Location: " . $enderecoFalha);

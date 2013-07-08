@@ -47,6 +47,12 @@
 	color:white;
 }
 
+.observacao_campo
+{
+	font-size:small;
+	color:blue;
+}
+
 #formulario_exibicao.corpo_formulario
 {
 	font-size: medium;

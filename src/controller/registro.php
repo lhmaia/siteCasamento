@@ -75,6 +75,8 @@
 		<label for='estado' >Estado:</label> <br /><input type="text" name="estado" id="estado" maxlength="2" /> <br />
 		<label for='telefone' >Telefone:</label> <br /><input type="text" name="telefone" id="telefone" /> <br />	
 		<label for='foto' >Foto de exibição: <br /><input type="file" name="foto" /><br />
+		<label for='lembrete' >Lembrete de senha: <br /><input type="text" id="lembrete_senha" name="lembrete_senha" /><br />
+		<div id="div_obs"><p class="observacao_campo">Preencha com um lembrete que o ajude a recuperar sua senha em caso de esquecimento. Este campo não deve conter a sua senha.</p></div>
 		<input type="submit" name="cadastrar" value="Cadastrar" />
 		</form>
 	</div>

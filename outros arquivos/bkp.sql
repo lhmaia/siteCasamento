@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS `pessoa` (
   `quemconvidou` int(11) DEFAULT NULL,
   `aprovado` char(1) DEFAULT NULL,
   `foto` varchar(255) NOT NULL,
+  `lembrete_senha` varchar(255)  NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
