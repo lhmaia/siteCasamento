@@ -8,7 +8,7 @@
 	
 	$lista_postagens = postagem::listaPostagens();
 	while ($row = mysqli_fetch_array($lista_postagens, MYSQLI_ASSOC)) {
-		$usuPost = new pessoa("", "", "", "", "", "", "", "", "");
+		$usuPost = new pessoa("", "", "", "", "", "", "", "", "", "");
 		if ($enoivo || $row['visibilidade'] == 0 || $row['id_pessoa'] == $idUsuSessao){
 			$usuPost->recuperar($row['id_pessoa']);
 			

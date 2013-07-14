@@ -5,7 +5,7 @@
 		header("Location: ../index.php");
 	}
 	
-	$usuario = new pessoa("","","","","","","","","");
+	$usuario = new pessoa("","","","","","","","","", "");
 	
 	if (!$usuario->recuperar($_GET['id_usuario'])){
 		header("../index.php");

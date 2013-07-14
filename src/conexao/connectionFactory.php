@@ -42,8 +42,8 @@
       */
       $servidor = "localhost";
       $usuario = "root";
-      //$senha = "notemaia2007";
-	  $senha = "";
+      $senha = "notemaia2007";
+	  //$senha = "";
       $banco = "sitecasamento";
       
       self::$conn = mysqli_connect($servidor, $usuario, $senha, $banco);

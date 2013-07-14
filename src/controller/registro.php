@@ -8,11 +8,12 @@
 		}
 		
 		$enderecoConfirmacao = "resposta_registro.php";
+		$enderecoUsuarioCadastrado = "resposta_email_repetido.php";
 		
 		//testa se ja existe usuario com o mesmo email
-		$usuario = new pessoa("","","","","","","","","");
+		$usuario = new pessoa("", "", "", "", "", "", "", "", "", "");
 		if ($usuario->recuperarPorEmail($_POST["email"])){
-			die("Ja existe um usuario com este email cadastrado.");
+			header("Location: " . $enderecoUsuarioCadastrado);
 		}
 		
 		$foto = $_FILES['foto'];
@@ -49,7 +50,7 @@
 			
 		$novoUsuario = new pessoa($_POST['nome'], $_POST['email'], $senha,
 				$_POST['logradouro'], $_POST['bairro'], $_POST['cidade'],
-				$_POST['estado'], $_POST['telefone'], $nome_imagem);
+				$_POST['estado'], $_POST['telefone'], $nome_imagem, $_POST['lembrete_senha']);
 			
 		$resultado = $novoUsuario->gravar();
 		if ($resultado){
@@ -65,19 +66,39 @@
 	<div id="formulario" class="corpo_formulario" >
 		<p>Participe conosco, faça seu cadastro.</p>
 		
-		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" name="cadastro" >
-		<label for='nome' >Nome:</label> <br /><input type="text" name="nome" id="nome" /> <br />
-		<label for='email' >Email:</label> <br /><input type="text" name="email" id="email" /> <br />
-		<label for='senha' >Senha:</label> <br /><input type='password' name='senha' id='senha' maxlength="15" /> <br />
+		<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" name="cadastro" onsubmit="return validaRegistro(true)" >
+		
+		<label for='nome' >Nome: </label><span id="campoObg" class="campoObg">*</span> <br />
+		<div id='divErro' class='observacao_campo'><p id='obsErroNome'></p></div>
+		<input type="text" name="nome" id="nome" /> <br />
+		
+		<label for='email' >Email: </label><span id="campoObg" class="campoObg">*</span> <br />
+		<div id='divErro' class='observacao_campo'><p id='obsErroEmail'></p></div>
+		<input type="text" name="email" id="email" /> <br />
+		
+		<label for='senha' >Senha: </label><span id="campoObg" class="campoObg">*</span> <br />
+		<div id="divObs" class="observacao_campo"><p id="pObservacao" class="observacao_campo">Mínimo de 8 dígitos</p></div>
+		<div id='divErro' class='observacao_campo'><p id='obsErroSenha'></p></div>
+		<input type='password' name='senha' id='senha' maxlength="15" /> <br />
+		
+		<label for='senha' >Confirmação da Senha: </label><span id="campoObg" class="campoObg">*</span> <br />
+		<input type='password' name='confirmacao_senha' id='confirmacao_senha' maxlength="15" /> <br />
+		
+   	    <label for='lembrete' >Lembrete de senha: </label> <span id="campoObg" class="campoObg">*</span><br />
+   	    <div id="divObs" class="observacao_campo"><p id="pObservacao" class="observacao_campo">Preencha com um lembrete que o ajude a recuperar sua senha em caso de esquecimento. Este campo não deve conter a sua senha.</p></div>
+   	    <div id='divErro' class='observacao_campo'><p id='obsErroLembrete'></p></div>
+   	    <input type="text" id="lembrete_senha" name="lembrete_senha" /><br />
+   	    
 		<label for='logradouro' >Endereço:</label>  <br /><input type="text" name="logradouro" id="logradouro" /> <br />
 		<label for='bairro' >Bairro:</label> <br /><input type="text" name="bairro" id="bairro" /> <br />
 		<label for='cidade' >Cidade:</label> <br /><input type="text" name="cidade" id="cidade" /> <br />
 		<label for='estado' >Estado:</label> <br /><input type="text" name="estado" id="estado" maxlength="2" /> <br />
-		<label for='telefone' >Telefone:</label> <br /><input type="text" name="telefone" id="telefone" /> <br />	
-		<label for='foto' >Foto de exibição: <br /><input type="file" name="foto" /><br />
-		<label for='lembrete' >Lembrete de senha: <br /><input type="text" id="lembrete_senha" name="lembrete_senha" /><br />
-		<div id="div_obs"><p class="observacao_campo">Preencha com um lembrete que o ajude a recuperar sua senha em caso de esquecimento. Este campo não deve conter a sua senha.</p></div>
+		<label for='telefone' >Telefone:</label> <br /><input type="text" name="telefone" id="telefone" /> <br />
+		<label for='foto' >Foto de exibição:</label> <br /><input type="file" name="foto" /><br />
+
 		<input type="submit" name="cadastrar" value="Cadastrar" />
+		
+		<p id="pObservacao" class="observacao_campo" style="margin-top: 15px;"><span id="campoObg" class="campoObg">*</span> Campos obrigatórios.</p>
 		</form>
 	</div>
 	

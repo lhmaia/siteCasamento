@@ -26,10 +26,19 @@
 	font-size: xx-large;
 }
 
-.corpo_formulario input[type=text]
+
+.corpo_formulario input[type=text], input[type=password], input[type=file]
 {
 	margin: 0px 0px 15px 0px;
 	width: 50%;
+	
+}
+
+
+.corpo_formulario div, input[type=text], input[type=password], input[type=file]
+{
+	margin: 0px 0px 15px 0px;
+	
 	
 }
 
@@ -47,10 +56,35 @@
 	color:white;
 }
 
-.observacao_campo
+#pObservacao.observacao_campo
 {
 	font-size:small;
 	color:blue;
+	padding: 0px;
+	margin: 0px;
+}
+#divObs.observacao_campo
+{
+	margin: 0px;
+}
+#divErro.observacao_campo p
+{
+	font-size:medium;
+	color:red;
+	padding: 0px;
+	margin: 0px;
+}
+#divErro.observacao_campo
+{
+	margin: 0px;
+}
+
+.campoObg
+{
+	font-size:medium;
+	color:red;
+	padding: 0px;
+	margin: 0px;
 }
 
 #formulario_exibicao.corpo_formulario
@@ -67,4 +101,15 @@
 #formulario_exibicao.corpo_formulario label
 {
 	font-weight: bold;
+}
+
+#divAlteracaoSenha
+{
+	border: solid;
+	border-width: thin;
+}
+
+#divAlteracaoSenha
+{
+	padding: 10px;
 }

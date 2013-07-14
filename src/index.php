@@ -77,8 +77,7 @@
     ?>
     </div>
     <div><a href="controller/mapa.php">Como chegar</a></div>
-    <div>Poste sua foto ou vídeo</div>
-    <div>Chá de panela</div>
+    <div>Poste uma foto</div>
   </div>
   
   <div id="corpo" class="corpo">

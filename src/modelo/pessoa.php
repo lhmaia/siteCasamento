@@ -195,7 +195,7 @@ class pessoa{
     $strConsulta = sprintf("UPDATE pessoa set nome = %s, email = %s, 
                       logradouro = %s, bairro = %s, cidade = %s,
                       estado = %s, telefone = %s, foto = %s, 
-    					aprovado = %s
+    					aprovado = %s, lembrete_senha = %s, senha = %s
                 WHERE id = %s ",
         $conexao->GetSQLValueString($this->nome, "text"),
         $conexao->GetSQLValueString($this->email, "text"),
@@ -206,7 +206,10 @@ class pessoa{
         $conexao->GetSQLValueString($this->telefone, "text"),
         $conexao->GetSQLValueString($this->foto, "text"),
     	$conexao->GetSQLValueString($this->aprovado == true ? "s" : "n" , "text"),
-        $conexao->GetSQLValueString($this->id, "int")
+    	$conexao->GetSQLValueString($this->lembrete_senha, "text"),
+    	$conexao->GetSQLValueString($this->senha, "text"),
+    	$conexao->GetSQLValueString($this->id, "int")
+
         );
     $consulta = mysqli_query($conexao->getConnection(), $strConsulta);
     if ($consulta){
@@ -280,6 +283,7 @@ class pessoa{
       $this->estado = $pessoa['estado'];
       $this->telefone = $pessoa['telefone'];
       $this->foto = $pessoa['foto'];
+      $this->lembrete_senha = $pessoa['lembrete_senha'];
       if($pessoa['aprovado'] == 's'){
         $this->aprovado = true;
       }

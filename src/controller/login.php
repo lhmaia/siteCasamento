@@ -76,9 +76,12 @@
 	      <tr>
       	  	  <td>
 		  		<div>
+		  		  <div>
+				    <a href="esquecisenha.php">Esqueci minha senha</a>
+				  </div>
 			      <div>
 				    <a href="registro.php">Registrar-se</a>
-				  </div>  
+				  </div>
 			    </div>    	
 		      </td>
 	      </tr>

@@ -1,148 +1,80 @@
-<html>
-<head>
-</head>
+<?php
+// Incluindo arquivo com a classe Mail
+@require_once('Mail.php');
 
-<body>
+// Destinatário da mensagem
+$to = "lhmaia@gmail.com";
+$from = "lhmaia@gmail.com";
 
-	  <div class="row">
-	    <div class="large-12 columns">
-	      <div class="panel">
-	        <h1>Feed Template</h1>
-	      </div>
-	    </div>
-	  </div>
-	  <!-- End Header and Nav -->
-	  <div class="row">
-	 <!-- Nav Sidebar -->
-	    <!-- This is source ordered to be pulled to the left on larger screens -->
-	    <div class="large-3 columns ">
-	      <div class="panel">
-	        <a href="#"><img src="http://placehold.it/300x240&text=[img]" /></a>
-	        <h5><a href="#">Your Name</a></h5>
-	          <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
-	          <section class="section">
-	            <h5 class="title"><a href="#">Section 1</a></h5>
-	          </section>
-	          <section class="section">
-	            <h5 class="title"><a href="#">Section 2</a></h5>
-	          </section>
-	          <section class="section">
-	            <h5 class="title"><a href="#">Section 3</a></h5>
-	          </section>
-	          <section class="section">
-	            <h5 class="title"><a href="#">Section 4</a></h5>
-	          </section>
-	          <section class="section">
-	            <h5 class="title"><a href="#">Section 5</a></h5>
-	          </section>
-	          <section class="section">
-	            <h5 class="title"><a href="#">Section 6</a></h5>
-	          </section>
-	        </div>
-	 
-	      </div>
-	    </div>
-	    
-	    <!-- Main Feed -->
-	    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-	    <div class="large-6 columns">
-	 
-	      <!-- Feed Entry -->
-	      <div class="row">
-	        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-	        <div class="large-10 columns">
-	          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-	          <ul class="inline-list">
-	            <li><a href="">Reply</a></li>
-	            <li><a href="">Share</a></li>
-	          </ul>
-	 
-	 
-	          <h6>2 Comments</h6>
-	          <div class="row">
-	            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-	            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-	          </div>
-	          <div class="row">
-	            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-	            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-	          </div>
-	        </div>
-	      </div>
-	      <!-- End Feed Entry -->
-	 
-	      <hr />
-	 
-	      <!-- Feed Entry -->
-	      <div class="row">
-	        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-	        <div class="large-10 columns">
-	          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-	          <ul class="inline-list">
-	            <li><a href="">Reply</a></li>
-	            <li><a href="">Share</a></li>
-	          </ul>
-	        </div>
-	      </div>
-	      <!-- End Feed Entry -->
-	 
-	      <hr />
-	 
-	      <!-- Feed Entry -->
-	      <div class="row">
-	        <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-	        <div class="large-10 columns">
-	          <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-	          <ul class="inline-list">
-	            <li><a href="">Reply</a></li>
-	            <li><a href="">Share</a></li>
-	          </ul>
-	 
-	 
-	          <h6>2 Comments</h6>
-	          <div class="row">
-	            <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-	            <div class="large-10 columns"><p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p></div>
-	          </div>
-	        </div>
-	      </div>
-	      <!-- End Feed Entry -->
-	 
-	    </div>
-	 
-	    <!-- Right Sidebar -->
-	    <!-- On small devices this column is hidden -->
-	    <aside class="large-3 columns hide-for-small">
-	      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
-	      <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
-	    </aside>
-	 
-	  </div>
-	 
-	 
-	  <!-- Footer -->
-	 
-	  <footer class="row">
-	    <div class="large-12 columns">
-	      <hr />
-	      <div class="row">
-	        <div class="large-5 columns">
-	          <p>&copy; Copyright no one at all. Go to town.</p>
-	        </div>
-	        <div class="large-7 columns">
-	          <ul class="inline-list right">
-	            <li><a href="#">Section 1</a></li>
-	            <li><a href="#">Section 2</a></li>
-	            <li><a href="#">Section 3</a></li>
-	            <li><a href="#">Section 4</a></li>
-	            <li><a href="#">Section 5</a></li>
-	            <li><a href="#">Section 6</a></li>
-	          </ul>
-	        </div>
-	      </div>
-	    </div>
-	  </footer>
+// Assunto da mensagem
+$subject = "Testando envio autenticado pelo Google Apps";
 
-</body>
+/* Corpo da mensagem
+Em caso de formulário alterar para a variável $_POST['CAMPO'] */
+$body = "Teste efetuado com sucesso!";
 
-</html>
+// Servidor do Gmail. Este servidor é padrão.
+$host = "ssl://smtp.gmail.com";
+
+/* Email do Gmail que fará o envio autenticado. Digite neste campo o seu e-mail que será responsável pelo envio dos e-mails */
+$username = "lhmaia@gmail.com";
+
+// Sua senha do GMAIL
+$password = "lhmc1983";
+
+$headers = array ('From' => $from,
+ 'To' => $to,
+ 'Subject' => $subject);
+
+$smtp = @Mail::factory('smtp',
+ array ('host' => $host,
+ 'port' => 465, // SMTPS(para mais detalhes ver /etc/services
+ 'auth' => true,
+ 'debug' => false, // Debug ligado
+ 'username' => $username,
+ 'password' => $password)
+ );
+
+// Efetuando o envio autenticado
+$mail = @$smtp->send($to, $headers, $body);
+
+// Verificando se houve erro
+if (@PEAR::isError($mail)) {
+ echo("Error" . $mail->getMessage());
+} else {
+ echo("Email enviado com sucesso!!");
+}
+?>
+
+<?php/*
+ require_once "Mail.php";
+ 
+ $from = "Luiz Henrique <lhmaia@gmail.com>";
+ $to = "Luiz <luizhenriquemc@hotmail.com>";
+ $subject = "Hi!";
+ $body = "Hi,\n\nHow are you?";
+ 
+ $host = "ssl://smtp.gmail.com";
+ $port = "465";
+ $username = "lhmaia@gmail.com";
+ $password = "lhmc1983";
+  
+ $headers = array ('From' => $from,
+   'To' => $to,
+   'Subject' => $subject);
+ $smtp = Mail::factory('smtp',
+   array ('host' => $host,
+     'port' => $port,
+     'auth' => true,
+     'username' => $username,
+     'password' => $password));
+ 
+ $mail = $smtp->send($to, $headers, $body);
+ 
+ if (PEAR::isError($mail)) {
+   echo("<p>" . $mail->getMessage() . "</p>");
+  } else {
+   echo("<p>Message successfully sent!</p>");
+  }
+  */
+ ?>

@@ -6,7 +6,7 @@
 
 <div id="formulario_exibicao" class="corpo_formulario" >
 	<div>
-		<a href="editardados.php">Editar dados</a> - <a href="../index.php">Pagina inicial</a>
+		<a href="editardados.php">Editar dados</a> <!-- a onclick="document.getElementById('pop').style.display='block';" >Alterar foto</a --> - <a href="../index.php">Pagina inicial</a>
 	</div>
 	
 	<div>
@@ -34,6 +34,13 @@
 		<label>Telefone: </label> <?php echo $_SESSION['usuarioSessao']->getTelefone(); ?> 
 	</div>
 
+</div>
+
+<div id="pop" style="display:none;position:absolute;top:50%;left:50%;margin-left:-150px;margin-top:-100px;padding:10px;width:300px;height:200px;border:1px solid #d0d0d0">
+<a href="#" onclick="document.getElementById('pop').style.display='none';" >[Fechar]</a>
+<br />
+	Agora coloque o estilo dessa div.
+ 
 </div>
 
 <?php require_once dirname(__FILE__)."/tempRodape.php"; ?>
