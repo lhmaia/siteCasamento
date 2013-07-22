@@ -9,6 +9,7 @@
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="../scripts/postagens.js"></script>
   <script type="text/javascript" src="scripts/valida.js"></script>
+  <script type="text/javascript" src="scripts/chapanela.js"></script>
   
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
   <link rel="stylesheet" type="text/css" href="../css/paginaPrincipal.css">

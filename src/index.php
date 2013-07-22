@@ -14,6 +14,7 @@
   
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="scripts/postagens.js"></script>
+  <script type="text/javascript" src="scripts/popupWindow.js"></script>
   <!-- script type="text/javascript" src="scripts/util.js"></script -->
   
   <script>
@@ -52,6 +53,7 @@
   
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
   <link rel="stylesheet" type="text/css" href="css/paginaPrincipal.css">
+  <link rel="stylesheet" type="text/css" href="css/popupWindow.css">
 </head>
 
 <body>
@@ -77,7 +79,12 @@
     ?>
     </div>
     <div><a href="controller/mapa.php">Como chegar</a></div>
-    <div>Poste uma foto</div>
+    <!-- div><a href="javascript:void(0);" onclick="javascript:OpenModelPopup();">Poste uma foto</a>	 	 
+    </div -->
+    <div>
+    	<a href="controller/cha_de_panela.php">Chá de Panela</a>
+    </div>
+    
   </div>
   
   <div id="corpo" class="corpo">
@@ -107,8 +114,11 @@
   			<?php include dirname(__FILE__).'/controller/exibe_postagens.php'; ?>
   		</div>
   	</div>
-  </div>
-
+  </div>  
+  <div id="MaskedDiv" class ="MaskedDiv">
+	  <div id="innerWindow" class="innerWindow">
+	  </div>    	
+  </div>    
 </body>
 
 </html>

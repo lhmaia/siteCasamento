@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+div.MaskedDiv 
+{
+	visibility: hidden;
+	position:absolute;
+	left:0px;
+	top:0px;
+	font-family:verdana;
+	font-weight:bold;
+	padding:0px;
+	margin:0px;
+    z-index:100;
+	background-image:url(../img/Mask.png);
+	/* ieWin only stuff */
+	_background-image:none;
+	_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale src='Mask.png');
+}
+
+div.innerWindow
+{
+	background-color: white;
+}
