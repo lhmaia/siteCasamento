@@ -46,14 +46,19 @@
 {
 	border-collapse:collapse;
 	font-size:1em;
-	border:1px solid blue;
+	border:1px solid #333333;
 	padding:3px 7px 2px 7px;
 }
 
 .corpo_formulario th
 {
-	background-color:blue;
+	background-color:#333333;
 	color:white;
+}
+
+.linhaTabelaCheck
+{
+	text-align: center;
 }
 
 #pObservacao.observacao_campo
@@ -112,4 +117,24 @@
 #divAlteracaoSenha
 {
 	padding: 10px;
+}
+
+.chapanela
+{
+	font-size: medium;
+	font-family: Arial;
+	
+}
+
+div.chapanela
+{
+	background-image: url("../../img/cha.png");
+	width: 65%;
+	margin-left: 17.5%;
+}
+
+p.chapanela
+{
+	margin-left: 10px;
+	margin-right: 
 }
