@@ -103,7 +103,7 @@
 	  			Quem pode ver esta mensagem:
 	  			<select name="escolheVisPost" id="escolheVisiPost">
 	  				<option value="todos">Todos</option>
-	  				<option value="somentenoivos">Somente os noivs</option> 
+	  				<option value="somentenoivos">Somente os noivos</option> 
 	  			</select>
 	  			<input type="button" name="btnPost" id="btnPost" value="Publicar" onclick="insereMensagem()" />
 	  			</p>
