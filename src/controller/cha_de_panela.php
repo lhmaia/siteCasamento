@@ -7,7 +7,7 @@
 	<div id="conviteChaPanela" class="chapanela">
 	<p id="conviteChaPanela" class="chapanela">Olá pessoal!!!</p>
 	<p id="conviteChaPanela" class="chapanela">
-	Luiz Henrique e eu (Fernanda rsrsr) Queremos fazer encontros antes do casório!
+	Luiz Henrique e eu (Fernanda rsrsr) Queremos fazer dois encontros antes do casório!
 	Dois? Dois! Um em Santos Dumont, no dia 03/08/2013. E outro, em Belo Horizonte, no dia 17/08/2013.
 	Afinal, a família é grande e está espalhada por esse Brasil a fora!!! Rsrsrs
 	Nada mais justo não é mesmo?
@@ -24,7 +24,7 @@
 	Ah! Já ia me esquecendo...como somos exímios cozinheiros, contamos com a participação de todos ao levarem uma receita culinária, de preferência, a que mais goste. Isso vale para meninas e meninos!!! Assim montaremos um caderno de culinária com os quitutes!!! 
 	</p>
 	<p id="conviteChaPanela" class="chapanela">
-	Em Santos Dumont será na casa da Tia Zilda e em Belo Horizonte na residência de meus pais ambos a partir 
+	Em Santos Dumont será na casa da Tia Zilda e em Belo Horizonte na residência de meus pais, ambos a partir 
 	das 17 horas. Quem puder levar um prato de salgado nos avise por mensagem no nosso site para prepararmos o lanche. O refrigerante é totalmente por nossa responsabilidade, combinado???
 	</p>
 	</div>
