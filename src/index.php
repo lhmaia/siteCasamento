@@ -70,20 +70,25 @@
   </div>
   
   <div id="idMenuEsquerdo" class="menu_esquerdo">
-  	<div>
+  	
     <?php
     	//testa se e membro do grupo noivos, o grupo 1 
 	   if($_SESSION["usuarioSessao"]->eMembro(1)){
-	    echo "<a href=\"controller/lista_usuarios.php\">Aprovar cadastros</a>"."<br \>";  
+	    echo "<div> <a href=\"controller/lista_usuarios.php\">Aprovar cadastros</a>"."<br \> </div>";  
 	   } 
     ?>
-    </div>
+    
     <div><a href="controller/mapa.php">Como chegar</a></div>
     <!-- div><a href="javascript:void(0);" onclick="javascript:OpenModelPopup();">Poste uma foto</a>	 	 
     </div -->
-    <div>
-    	<a href="controller/cha_de_panela.php">Chá de Panela</a>
-    </div>
+    
+    <?php
+    	//testa se e membro do grupo noivos, o grupo 1 
+	   if($_SESSION["usuarioSessao"]->eMembro(2)){
+	    echo "<div> <a href=\"controller/cha_de_panela.php\">Chá de Panela</a>"."<br \> </div>";  
+	   } 
+    ?>
+    
     
   </div>
   

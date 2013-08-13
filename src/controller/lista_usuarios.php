@@ -15,6 +15,7 @@
 		<tr>
 		<th>Nome</th>
 		<th>E-mail</th>
+		<th>Aprovado</th>
 		<th></th>
 		
 		</tr>
@@ -27,6 +28,9 @@
 					echo "</td>";
 					echo "<td>";
 						echo $row['email'];
+					echo "</td>";
+					echo "<td>";
+						if (strcmp($row['aprovado'], "s")) echo "Não"; else echo "Sim";;
 					echo "</td>";
 					echo "<td>";
 						echo "<a href=\"exibedados_usuarios.php?aprovar=exibir&id_usuario=" . $row['id'] . "\" >Ver detalhes</a>";

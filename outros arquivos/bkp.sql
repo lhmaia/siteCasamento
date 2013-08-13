@@ -93,6 +93,14 @@ CREATE TABLE postagens (
 	CONSTRAINT postagem_pessoa FOREIGN KEY (id_pessoa) references Pessoa(id)
 );
 
+CREATE TABLE itenschapanela (
+	id int(11) NOT NULL AUTO_INCREMENT,
+	dsc_item varchar(255),
+	quemvaidar int(11),
+	
+	PRIMARY KEY(id),
+	CONSTRAINT item_pessoa FOREIGN KEY (quemvaidar) references Pessoa(id)
+);
 
 DELIMITER ;
 

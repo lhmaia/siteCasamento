@@ -7,10 +7,8 @@
 	<div id="conviteChaPanela" class="chapanela">
 	<p id="conviteChaPanela" class="chapanela">Olá pessoal!!!</p>
 	<p id="conviteChaPanela" class="chapanela">
-	Luiz Henrique e eu (Fernanda rsrsr) Queremos fazer dois encontros antes do casório!
-	Dois? Dois! Um em Santos Dumont, no dia 03/08/2013. E outro, em Belo Horizonte, no dia 17/08/2013.
-	Afinal, a família é grande e está espalhada por esse Brasil a fora!!! Rsrsrs
-	Nada mais justo não é mesmo?
+	Luiz Henrique e eu (Fernanda rsrsr) Queremos fazer um encontro antes do casório!
+	No dia 24/08/2013 a partir das 18 horas, na casa dos meus pais.
 	</p>
 	
 	<p id="conviteChaPanela" class="chapanela">

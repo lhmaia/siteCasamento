@@ -264,6 +264,29 @@ class pessoa{
   	return false;
   }
   
+  public function insereGrupo($id_grupo){
+  	require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
+  	$conexao = connectionFactory::getInstance();
+  	$strConsulta = sprintf("insert into membros_grupos (id_grupo, id_pessoa) values (%s, %s)", $conexao->GetSQLValueString($id_grupo, "int"), $conexao->GetSQLValueString($this->id, "int"));
+  	 
+  	$consulta = mysqli_query($conexao->getConnection(), $strConsulta);
+  	if ($consulta){
+		return true;
+  	}
+  	return false;
+  }  
+  public function removeGrupo($id_grupo){
+  	require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
+  	$conexao = connectionFactory::getInstance();
+  	$strConsulta = sprintf("delete from membros_grupos where id_grupo = %s and id_pessoa = %s", $conexao->GetSQLValueString($id_grupo, "int"), $conexao->GetSQLValueString($this->id, "int"));
+  
+  	$consulta = mysqli_query($conexao->getConnection(), $strConsulta);
+  	if ($consulta){
+  		return true;
+  	}
+  	return false;
+  }
+  
   public function recuperar($id){
     require_once dirname(__FILE__).'/../conexao/connectionFactory.php';
     $conexao = connectionFactory::getInstance();

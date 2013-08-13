@@ -20,6 +20,16 @@
 		}
 		$usuario->atualizar();
 	}
+	
+	if(strcmp($_GET['aprovar'], "exibir")){
+		if (strcmp($_GET['aprovar'], "Convidar_cha_panela") == 0){
+			$usuario->insereGrupo(2);
+		}
+		if (strcmp($_GET['aprovar'], "Retirar_cha_panela") == 0){
+			$usuario->removeGrupo(2);
+		}
+		$usuario->atualizar();
+	}
 ?>
 
 <?php require_once dirname(__FILE__)."/tempCabecalho.php"; ?>
@@ -72,6 +82,15 @@
 				  }
 				  else{
 			      	echo "name=\"aprovar\" value=\"Aprovar\"";
+				  }
+			?> 
+			/>
+			<input type="submit"  
+			<?php if ($usuario->eMembro(2)){
+					echo "name=\"aprovar\" value=\"Retirar_cha_panela\"";
+				  }
+				  else{
+			      	echo "name=\"aprovar\" value=\"Convidar_cha_panela\"";
 				  }
 			?> 
 			/>
