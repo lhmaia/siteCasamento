@@ -12,6 +12,10 @@
 	<div>
 		<img alt="foto de perfil" height="200" width="150" src=<?php echo "../modelo/img/".$_SESSION["usuarioSessao"]->getFoto(); ?> >
 	</div>
+	<form action="processaalterarfoto.php" method="post" enctype="multipart/form-data" name="alterarFoto">
+		<label for='foto' >Alterar foto:</label> <br /><input type="file" name="foto" /><br />
+		<input type="submit" name="Alterar" value="Confirmar alteração" />
+	</form>
 	<div id="nome">
 		<label>Nome: </label> <?php echo $_SESSION['usuarioSessao']->getNome(); ?> 
 	</div>

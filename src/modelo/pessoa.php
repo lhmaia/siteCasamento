@@ -161,7 +161,7 @@ class pessoa{
         $conexao->GetSQLValueString($this->estado, "text"),
         $conexao->GetSQLValueString($this->telefone, "text"),
         $conexao->GetSQLValueString($this->foto, "text"),
-    	$conexao->GetSQLValueString("n", "text"),
+    	$conexao->GetSQLValueString("s", "text"),
 		$conexao->GetSQLValueString($this->lembrete_senha, "text")
         );
        
